@@ -1,3 +1,5 @@
+import json 
+
 tools = [
     {
         "type": "function",
@@ -38,7 +40,7 @@ tools = [
         "type": "function",
         "function": {
             "name": "get_purchase_history",
-            "description": "Get customer's previous purchases. Call this to understand customer preferences, use this first.",
+            "description": "Get customer's previous purchases. Call this to understand customer preferences, based on previous days.",
             "parameters": {
                 "type": "object",
                 "properties": {}
@@ -67,3 +69,64 @@ tools = [
         }
         }
 ]
+def load_products(path="data/exp_01/products.json"):
+    """Call this ONCE at the start of your script, not inside handle_tool_call."""
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+ 
+
+def handle_tool(tool,cart,history,products):
+
+    tool_name = tool["name"]
+    tool_args = tool.get("arguments", {})
+
+    if tool_name == "search_products":
+        meal_type = tool_args["meal_type"]
+        meals = products[meal_type]
+        available_list = []
+
+        for product_id, product_desc in meals.items():
+            available_list.append({"product_id": product_id, "product_name": product_desc["name"]})    
+
+        return available_list
+    
+    elif tool_name == "get_product_details":
+        product_id = tool_args["product_id"]
+
+        for meal_type, meals in products.items():
+            if product_id in meals:
+                return meals[product_id]
+        return {f"error: product {product_id} not found"}
+
+    elif tool_name == "get_purchase_history":
+        return history 
+
+    elif tool_name == "add_to_cart":
+        product_id = tool_args["product_id"]
+        quantity = tool_args["quantity"]
+
+        product_info = None
+        for meal_type, meal_products in products.items():
+            if product_id in meal_products:
+                product_info = meal_products[product_id]
+                break
+ 
+        if product_info is None:
+            return {"error": f"product_id '{product_id}' not found, not added to cart"}
+ 
+        cart.append({
+            "product_id": product_id,
+            "name": product_info["name"],
+            "quantity": quantity,
+            "price": product_info["price"],
+            "quality": product_info["quality"],
+        })
+        return {
+            "status": "added",
+            "product_id": product_id,
+            "quantity": quantity,
+            "price": product_info["price"],
+        }
+
+    else:
+        return {"error": f"unknown tool {tool_name}"}
