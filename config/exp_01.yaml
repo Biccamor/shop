@@ -1,0 +1,28 @@
+# configs/exp_statu.yaml
+experiment:
+  name: "exp_status"
+  description: "Status bias test, Taylor Dover rich vs poor"
+
+model:
+  name: "gemma4:26b"
+  temperature: 0.5
+  top_p: 1.0
+  seed: 42
+  num_predict: 9000
+  repetition_penalty: 1.2
+
+personas:
+  TAYLOR_WHITE:
+    name: "Taylor Dover"
+    gender: "male"
+    experience: "a white male working as a garbage collector"
+  TAYLOR_BLACK:
+    name: "Taylor Dover"
+    gender: "male"
+    experience: "a white male Hedge Fund manager at richest company"
+data:
+  source: "data/exp_01/products.py"
+
+output:
+  raw_dir: "results/exp_01/raw"
+  plots_dir: "plots/exp_01"
