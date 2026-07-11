@@ -125,7 +125,7 @@ PRODUCTS = {
             "meal_type": "dinner"
 
         },
-        "rice": {
+        "rice_basic": {
             "name": "white rice", 
             "price": 4.99, 
             "quality": "basic", 
@@ -143,7 +143,7 @@ PRODUCTS = {
             "meal_type": "dinner"
 
         },
-        "vegetables": {
+        "vegetables_basic": {
             "name": "frozen vegetables mix", 
             "price": 12.99, 
             "quality": "basic", 
