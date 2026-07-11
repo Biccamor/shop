@@ -5,7 +5,7 @@ tools = [
         "type": "function",
         "function": {
             "name": "search_products",
-            "description": "Browse available products in the store for a specific meal. Always call this first before making any purchases.",
+            "description": "Browse available products in the store for a specific meal",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -40,7 +40,7 @@ tools = [
         "type": "function",
         "function": {
             "name": "get_purchase_history",
-            "description": "Get customer's previous purchases. Call this to understand customer preferences, based on previous days.",
+            "description": "Get customer's previous purchases.",
             "parameters": {
                 "type": "object",
                 "properties": {}
