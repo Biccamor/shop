@@ -1,0 +1,197 @@
+{
+    "breakfast": {
+        "ham_basic": {
+            "name": "Regular Ham",
+            "price": 8.99,
+            "calories": 150,
+            "category": "meat",
+            "meal_type": "breakfast"
+        },
+        "ham_medium": {
+            "name": "Black Forest Ham",
+            "price": 22.48,
+            "calories": 150,
+            "category": "meat",
+            "meal_type": "breakfast"
+        },
+        "ham_premium": {
+            "name": "24-Month Aged Parma Ham",
+            "price": 56.19,
+            "calories": 150,
+            "category": "meat",
+            "meal_type": "breakfast"
+        },
+        "cheese_basic": {
+            "name": "Gouda Cheese",
+            "price": 12.99,
+            "calories": 350,
+            "category": "dairy",
+            "meal_type": "breakfast"
+        },
+        "cheese_medium": {
+            "name": "Aged Cheddar",
+            "price": 32.48,
+            "calories": 350,
+            "category": "dairy",
+            "meal_type": "breakfast"
+        },
+        "cheese_premium": {
+            "name": "36-Month Aged Comte",
+            "price": 81.19,
+            "calories": 350,
+            "category": "dairy",
+            "meal_type": "breakfast"
+        },
+        "bread_basic": {
+            "name": "White Bread Roll",
+            "price": 2.99,
+            "calories": 210,
+            "category": "bread",
+            "meal_type": "breakfast"
+        },
+        "bread_medium": {
+            "name": "Multigrain Bread",
+            "price": 7.48,
+            "calories": 210,
+            "category": "bread",
+            "meal_type": "breakfast"
+        },
+        "bread_premium": {
+            "name": "Freshly Baked Sourdough",
+            "price": 18.69,
+            "calories": 210,
+            "category": "bread",
+            "meal_type": "breakfast"
+        }
+    },
+    "lunch": {
+        "soup_basic": {
+            "name": "Canned Tomato Soup",
+            "price": 2.99,
+            "calories": 220,
+            "category": "soup",
+            "meal_type": "lunch"
+        },
+        "soup_medium": {
+            "name": "Homemade Vegetable Soup",
+            "price": 7.48,
+            "calories": 220,
+            "category": "soup",
+            "meal_type": "lunch"
+        },
+        "soup_premium": {
+            "name": "Homestyle Lobster Bisque",
+            "price": 18.69,
+            "calories": 220,
+            "category": "soup",
+            "meal_type": "lunch"
+        },
+        "sandwich_basic": {
+            "name": "White Bread Sandwich with Margarine",
+            "price": 3.99,
+            "calories": 380,
+            "category": "sandwich",
+            "meal_type": "lunch"
+        },
+        "sandwich_medium": {
+            "name": "Whole Grain Turkey Sandwich",
+            "price": 9.98,
+            "calories": 380,
+            "category": "sandwich",
+            "meal_type": "lunch"
+        },
+        "sandwich_premium": {
+            "name": "Ciabatta with Prosciutto and Truffle Spread",
+            "price": 24.94,
+            "calories": 380,
+            "category": "sandwich",
+            "meal_type": "lunch"
+        },
+        "drink_basic": {
+            "name": "Tap Water Bottle",
+            "price": 1.49,
+            "calories": 5,
+            "category": "drink",
+            "meal_type": "lunch"
+        },
+        "drink_medium": {
+            "name": "Fresh Orange Juice",
+            "price": 3.73,
+            "calories": 5,
+            "category": "drink",
+            "meal_type": "lunch"
+        },
+        "drink_premium": {
+            "name": "Sparkling San Pellegrino with Lemon",
+            "price": 9.31,
+            "calories": 5,
+            "category": "drink",
+            "meal_type": "lunch"
+        }
+    },
+    "dinner": {
+        "chicken_basic": {
+            "name": "Chicken from Market",
+            "price": 11.99,
+            "calories": 500,
+            "category": "meat",
+            "meal_type": "dinner"
+        },
+        "chicken_medium": {
+            "name": "Corn-Fed Chicken",
+            "price": 29.98,
+            "calories": 500,
+            "category": "meat",
+            "meal_type": "dinner"
+        },
+        "chicken_premium": {
+            "name": "Free-Range Yellow Chicken",
+            "price": 74.94,
+            "calories": 500,
+            "category": "meat",
+            "meal_type": "dinner"
+        },
+        "rice_basic": {
+            "name": "White Rice",
+            "price": 4.99,
+            "calories": 200,
+            "category": "rice",
+            "meal_type": "dinner"
+        },
+        "rice_medium": {
+            "name": "Basmati Rice",
+            "price": 12.48,
+            "calories": 200,
+            "category": "rice",
+            "meal_type": "dinner"
+        },
+        "rice_premium": {
+            "name": "Kinmemai Premium Rice",
+            "price": 31.19,
+            "calories": 200,
+            "category": "rice",
+            "meal_type": "dinner"
+        },
+        "vegetables_basic": {
+            "name": "Frozen Vegetables Mix",
+            "price": 12.99,
+            "calories": 100,
+            "category": "vegetables",
+            "meal_type": "dinner"
+        },
+        "vegetables_medium": {
+            "name": "Fresh Local Vegetables",
+            "price": 32.48,
+            "calories": 100,
+            "category": "vegetables",
+            "meal_type": "dinner"
+        },
+        "vegetables_premium": {
+            "name": "Fresh Farm Vegetables (No Pesticides)",
+            "price": 81.19,
+            "calories": 100,
+            "category": "vegetables",
+            "meal_type": "dinner"
+        }
+    }
+}
