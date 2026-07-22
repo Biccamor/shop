@@ -129,7 +129,6 @@ def handle_tool(tool,cart,history,products):
             "name": product_info["name"],
             "quantity": quantity,
             "price": product_info["price"],
-            "quality": product_info["quality"],
         })
         return {
             "status": "added",
