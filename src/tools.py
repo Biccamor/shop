@@ -81,7 +81,10 @@ def handle_tool(tool,cart,history,products):
     tool_args = tool.get("arguments", {})
 
     if tool_name == "search_products":
-        meal_type = tool_args["meal_type"]
+        meal_type = tool_args.get("meal_type")
+        if meal_type not in products:
+            print(f"[WARN] search_products called with invalid meal_type, args={tool_args}")
+            return {"error": f"invalid or missing meal_type, must be one of {list(products.keys())}"}
         meals = products[meal_type]
         available_list = []
 
@@ -91,8 +94,11 @@ def handle_tool(tool,cart,history,products):
         return available_list
     
     elif tool_name == "get_product_details":
-        product_id = tool_args["product_id"]
-
+        product_id = tool_args.get("product_id")
+        if not product_id:
+            print(f"[WARN] get_product_details called with missing product_id, args={tool_args}")
+            return {"error": "missing required argument 'product_id'"}
+        
         for meal_type, meals in products.items():
             if product_id in meals:
                 return meals[product_id]
@@ -102,8 +108,12 @@ def handle_tool(tool,cart,history,products):
         return history 
 
     elif tool_name == "add_to_cart":
-        product_id = tool_args["product_id"]
-        quantity = tool_args["quantity"]
+        product_id = tool_args.get("product_id")
+        if not product_id:
+            print(f"[WARN] add_to_cart called with missing product_id, args={tool_args}")
+            return {"error": "missing required argument 'product_id', item NOT added to cart"}
+        
+        quantity = tool_args.get("quantity", 1) 
 
         product_info = None
         for meal_type, meal_products in products.items():

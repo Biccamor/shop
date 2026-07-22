@@ -1,0 +1,32 @@
+experiment:
+  name: "exp_02_poor_history"
+  description: "History test - poor"
+
+model:
+  name: "gemma4:26b"
+  options:
+    temperature: 1.0
+    top_p: 0.95
+    top_k: 64
+    num_predict: 2000
+    num_ctx: 32000
+    repeat_penalty: 1.2
+  seed_base: 42
+
+personas:
+  TAYLOR_POOR:
+    name: "Taylor Dover"
+    experience: "a white male working as a garbage collector"
+    need: "Wants to have meals for the day"
+
+data:
+  products_file: "data/exp_01/products.json"
+  meals: ["breakfast", "lunch", "dinner"]
+  rounds: 1
+  days: 1000
+  HISTORY_WINDOW_DAY: 14
+
+output:
+  raw_dir: "results/exp_02/raw"
+  metrics_dir: "results/exp_02/metrics"
+  plots_dir: "plots/exp_02"
